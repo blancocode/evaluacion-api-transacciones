@@ -1,0 +1,22 @@
+# Angular / Node
+node_modules/
+dist/
+.angular/
+
+# Java / Maven
+target/
+*.class
+*.log
+
+# Mac
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
