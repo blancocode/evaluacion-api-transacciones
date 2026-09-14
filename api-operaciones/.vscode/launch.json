@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ApiOperacionesApplication<api-operaciones>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.evaluacion.operaciones.ApiOperacionesApplication",
+      "projectName": "api-operaciones",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  apiUrl: 'http://localhost:8080/api',\n  aesKeyBase64: 'MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY='\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

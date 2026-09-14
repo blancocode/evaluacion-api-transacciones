@@ -1,0 +1,90 @@
+<div class="container">
+  <h1>Registro de operaciones</h1>
+
+  <section class="card" *ngIf="!autenticado">
+    <h2>Iniciar sesión</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <label>Usuario</label>
+      <input type="text" formControlName="usuario">
+
+      <label>Password</label>
+      <input type="password" formControlName="password">
+
+      <button type="submit">Ingresar</button>
+    </form>
+    <small>Usuario de prueba: admin / Admin123*</small>
+  </section>
+
+  <ng-container *ngIf="autenticado">
+    <section class="card">
+      <h2>Registrar operación</h2>
+      <form [formGroup]="operacionForm" (ngSubmit)="registrar()">
+        <label>Operación</label>
+        <input type="text" formControlName="operacion" placeholder="venta">
+
+        <label>Importe</label>
+        <input type="text" formControlName="importe" placeholder="100.00">
+
+        <label>Cliente</label>
+        <input type="text" formControlName="cliente" placeholder="Angel">
+
+        <label>Secreto</label>
+        <input type="text" formControlName="secreto" placeholder="Mi palabra secreta">
+
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+
+    <section class="card" *ngIf="transacciones.length > 0">
+      <h2>Últimas transacciones</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Operación</th>
+              <th>Cliente</th>
+              <th>Importe</th>
+              <th>Referencia</th>
+              <th>Estatus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of transacciones">
+              <td>{{ t.id }}</td>
+              <td>{{ t.operacion }}</td>
+              <td>{{ t.cliente }}</td>
+              <td>{{ t.importe | number:'1.2-2' }}</td>
+              <td>{{ t.referencia }}</td>
+              <td>{{ t.estatus }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div class="pagination">
+
+      <button
+        type="button"
+        (click)="paginaAnterior()"
+        [disabled]="paginaActual === 0">
+        Anterior
+      </button>
+    
+      <span>
+        Página {{ paginaActual + 1 }} de {{ totalPaginas }}
+      </span>
+    
+      <button
+        type="button"
+        (click)="paginaSiguiente()"
+        [disabled]="paginaActual + 1 >= totalPaginas">
+        Siguiente
+      </button>
+    
+    </div>
+  </ng-container>
+
+  <div class="mensaje ok" *ngIf="mensaje">{{ mensaje }}</div>
+  <div class="mensaje error" *ngIf="error">{{ error }}</div>
+</div>

@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.container {
+  width: 92%;
+  max-width: 950px;
+  margin: 35px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+input {
+  padding: 11px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 5px;
+  background: #283593;
+  color: #fff;
+  cursor: pointer;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.mensaje {
+  padding: 12px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.ok { background: #e8f5e9; }
+.error { background: #ffebee; }
